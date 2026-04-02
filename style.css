@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Georgia', serif; /* Vintage font style */
+}
+
+body {
+    background-color: #f5f5dc; /* Vintage Cream/Beige */
+    color: #3e2723;            /* Deep Brown Text */
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: #3e2723; /* Dark Brown */
+    color: #f5f5dc;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li a {
+    color: #f5f5dc;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+/* Card Grid: 3 per row on Desktop */
+.card-section { 
+    padding: 50px 5%; 
+    text-align: center; 
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.card {
+    background: #fffdfa;
+    border: 1px solid #d7ccc8;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover { 
+    transform: translateY(-10px); 
+}
+
+.card img { 
+    width: 100%; 
+    height: 200px; 
+    object-fit: cover; 
+}
+
+.card-content { padding: 20px; }
+
+/* Photo Gallery: 3x3 Grid */
+.gallery-section { 
+    padding: 50px 5%; 
+    text-align: center; 
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.photo-item img {
+    width: 100%;
+    border-radius: 4px;
+    filter: sepia(30%); /* Vintage effect on photos */
+    transition: 0.5s;
+}
+
+.photo-item img:hover { 
+    filter: sepia(0%); 
+    transform: scale(1.02); 
+}
+
+/* --- RESPONSIVENESS --- */
+@media (max-width: 900px) {
+    .card-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    .photo-gallery { 
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 600px) {
+    .card-grid { 
+        grid-template-columns: 1fr; 
+    } /* 1 card on mobile */
+    
+    .photo-gallery { 
+        grid-template-columns: 1fr; 
+    }
+    
+    .nav-links { 
+        display: none; 
+    } /* Hide for simple mobile view */
+}

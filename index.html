@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vintage Responsive Grid</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">VintageArt</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Cards</a></li>
+            <li><a href="#">Gallery</a></li>
+        </ul>
+        <div class="burger" onclick="toggleNav()">
+            <div></div><div></div><div></div>
+        </div>
+    </nav>
+
+    <section class="card-section">
+        <h2>Our Services</h2>
+        <div class="card-grid">
+            <div class="card">
+                <img src="https://picsum.photos/400/250?nature,water&random=1" alt="Card 1">
+                <div class="card-content">
+                    <h3>Creative Design</h3>
+                    <p>Classical aesthetics meets modern responsive layouts.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://picsum.photos/400/250?nature,mountain&random=2" alt="Card 2">
+                <div class="card-content">
+                    <h3>Development</h3>
+                    <p>Building robust structures with clean, vintage-inspired code.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://picsum.photos/400/250?nature,forest&random=3" alt="Card 3">
+                <div class="card-content">
+                    <h3>Marketing</h3>
+                    <p>Traditional values with a digital reach for the modern era.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <h2>Vintage Gallery</h2>
+        <div class="photo-gallery">
+            <div class="photo-item"><img src="https://picsum.photos/400/400?nature&random=11"></div>
+            <div class="photo-item"><img src="https://picsum.photos/400/400?nature&random=12"></div>
+            <div class="photo-item"><img src="https://picsum.photos/400/400?nature&random=13"></div>
+            <div class="photo-item"><img src="https://picsum.photos/400/400?nature&random=14"></div>
+            <div class="photo-item"><img src="https://picsum.photos/400/400?nature&random=15"></div>
+            <div class="photo-item"><img src="https://picsum.photos/400/400?nature&random=16"></div>
+            <div class="photo-item"><img src="https://picsum.photos/400/400?nature&random=17"></div>
+            <div class="photo-item"><img src="https://picsum.photos/400/400?nature&random=18"></div>
+            <div class="photo-item"><img src="https://picsum.photos/400/400?nature&random=19"></div>
+        </div>
+    </section>
+
+    <script>
+    function toggleNav() {
+  const nav = document.getElementById('navLinks');
+  if (nav.style.display === "flex") {
+    nav.style.display = "none";
+  } else {
+    nav.style.display = "flex";
+    nav.style.flexDirection = "column";
+    nav.style.position = "absolute";
+    nav.style.top = "60px";
+    nav.style.left = "0";
+    nav.style.width = "100%";
+    nav.style.background = "#3e2723";
+    nav.style.padding = "20px";
+  }
+}
+
+// Card Click Effect
+document.querySelectorAll('.card').forEach(card =>
+{
+  card.onclick = () => {
+    card.style.borderColor = "#8d6e63";
+  };
+});
+</script>
+</body>
+</html>
